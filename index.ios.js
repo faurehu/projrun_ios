@@ -1,5 +1,5 @@
 'use strict';
 import { AppRegistry } from 'react-native';
-import App from './src/components/App';
+import Root from './src/components/Root';
 
-AppRegistry.registerComponent('projrun_ios', () => App);
+AppRegistry.registerComponent('projrun_ios', () => Root);

@@ -1,27 +1,28 @@
-import React, {
-  Component,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import React, { Component } from 'react-native';
+import {bindActionCreators} from 'redux';
+import Counter from './Counter';
+import * as counterActions from '../actions/counterActions';
+import { connect } from 'react-redux';
 
-import styles from '../styles.js';
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-export default class App extends Component {
   render() {
+    const { state, actions } = this.props;
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Counter
+        counter={state}
+        {...actions} />
     );
   }
 }
+
+export default connect(state => ({
+    state: state.counter
+  }),
+  (dispatch) => ({
+    actions: bindActionCreators(counterActions, dispatch)
+  })
+)(App);
