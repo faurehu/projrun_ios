@@ -13,10 +13,6 @@ Clone the repo and call:
 npm install
 ```
 
-Open `node_modules/react_native/jest/env.js` and remove the last line:
-
-`jest.mock('ErrorUtils', require('ErrorUtils'));`
-
 Make sure the tests run by executing jest
 
 ```shell
