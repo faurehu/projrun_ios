@@ -1,4 +1,4 @@
-#### Project Run iOS Client
+#### Project Run iOS Client [![Build Status](https://www.bitrise.io/app/f37f7660c284ec3a.svg?token=KYs8nW6vMXqRHUcTFcg8rA&branch=redux)](https://www.bitrise.io/app/f37f7660c284ec3a)
 
 ##### Technologies:
 * React Native -
