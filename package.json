@@ -36,7 +36,10 @@
   },
   "dependencies": {
     "babel-core": "^6.5.2",
+    "babel-eslint": "^5.0.0",
     "babel-jest": "^6.0.1",
+    "eslint": "^2.2.0",
+    "eslint-plugin-react": "^4.0.0",
     "expect": "^1.14.0",
     "fetch": "^1.0.1",
     "immutable": "^3.7.6",

@@ -1,5 +1,3 @@
-'use strict';
-
 jest.autoMockOff();
 
 const React = require('react-native');

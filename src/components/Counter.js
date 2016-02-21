@@ -4,7 +4,7 @@ import React, {
   View,
   Text,
   TouchableOpacity
-} from 'react-native';
+} from 'react-native'
 
 const styles = StyleSheet.create({
   button: {
@@ -16,15 +16,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     margin: 3
   }
-});
+})
 
 export default class Counter extends Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
-    const { counter, increment, decrement } = this.props;
+    const { counter, increment, decrement } = this.props
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>{counter}</Text>
@@ -35,6 +35,6 @@ export default class Counter extends Component {
           <Text>down</Text>
         </TouchableOpacity>
       </View>
-    );
+    )
   }
 }

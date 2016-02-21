@@ -1,13 +1,11 @@
-'use strict';
-
-var babel = require('babel-core');
+var babel = require('babel-core') 
 
 module.exports = {
-    process: function (src, filename) {
-        var result = babel.transform(src, {
-            filename: filename
-        });
+  process: function (src, filename) {
+    var result = babel.transform(src, {
+      filename: filename
+    })
 
-        return result.code;
-    }
-};
+    return result.code
+  }
+}

@@ -1,6 +1,6 @@
 import React, {
   StyleSheet
-} from 'react-native';
+} from 'react-native'
 
 export default styles = StyleSheet.create({
   container: {
@@ -19,4 +19,4 @@ export default styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-});
+})
