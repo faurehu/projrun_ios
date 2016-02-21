@@ -2,10 +2,53 @@
   "name": "projrun_ios",
   "version": "0.0.1",
   "private": true,
+  "jest": {
+    "scriptPreprocessor": "./jest.js",
+    "setupEnvScriptFile": "./node_modules/react-native/jestSupport/env.js",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testFileExtensions": [
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "unmockedModulePathPatterns": [
+      "react",
+      "react-addons-test-utils",
+      "promise",
+      "source-map",
+      "key-mirror",
+      "immutable",
+      "fetch",
+      "redux",
+      "redux-thunk"
+    ],
+    "verbose": true,
+    "testPathDirs": [
+      "src/"
+    ]
+  },
   "scripts": {
+    "test": "rm -rf ./node_modules/jest-cli/.haste_cache && jest ",
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react-native": "^0.19.0"
+    "react-native": "^0.18.1",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^5.0.0",
+    "babel-jest": "^6.0.1",
+    "eslint": "^2.2.0",
+    "eslint-plugin-react": "^4.0.0",
+    "expect": "^1.14.0",
+    "jest-cli": "^0.8.2",
+    "istanbul": "^0.4.2",
+    "react": "^0.14.7",
+    "react-addons-test-utils": "^0.14.7"
   }
 }
