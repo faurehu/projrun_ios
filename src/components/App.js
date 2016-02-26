@@ -20,7 +20,7 @@ class App extends Component {
 export default connect(state => ({
   // state: state.counter
 }),
-  (dispatch) => ({
+  dispatch => ({
     actions: bindActionCreators(pinActions, dispatch)
   })
 )(App)

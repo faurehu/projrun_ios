@@ -10,13 +10,15 @@ export default class PinScreen extends Component {
   }
 
   onChangeTextHandler = (text) => {
+    let { send } = this.props
     if(text.length === 4) {
       this._textInput.setNativeProps({text: ''})
-      this.props.send(text)
+      send(text)
     }
   }
 
   render() {
+    let { onChangeTextHandler } = this
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <TextInput
@@ -25,7 +27,7 @@ export default class PinScreen extends Component {
           style={{height: 40, fontSize: 40, textAlign: 'center'}}
           maxLength={4}
           autoFocus={true}
-          onChangeText={this.onChangeTextHandler} />
+          onChangeText={onChangeTextHandler} />
       </View>
     )
   }
