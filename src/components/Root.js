@@ -1,10 +1,10 @@
-import React, { Component } from 'react-native' 
+import React, { Component } from 'react-native'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import App from './App'
-import counterApp from '../reducers'
+import appStore from '../reducers'
 
-let store = createStore(counterApp)
+let store = createStore(appStore)
 
 export default class Root extends Component {
   render() {

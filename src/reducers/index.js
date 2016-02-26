@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux' 
-import counter from './counter'
+import { combineReducers } from 'redux'
+import pin from './pin'
 
-const counterApp = combineReducers({
-  counter
+const appStore = combineReducers({
+  pin
 })
 
-export default counterApp
+export default appStore

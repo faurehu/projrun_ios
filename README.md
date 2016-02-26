@@ -19,8 +19,5 @@ Make sure the tests run by executing jest
 npm test
 ```
 
-Start the packager and simulator by calling the following line:
-
-```shell
-react-native run-ios
-```
+Start the packager and simulator by opening `ios/projrun_ios.xcodeproj/project.pbxproj`
+on XCode and running the project.

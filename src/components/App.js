@@ -1,7 +1,7 @@
 import React, { Component } from 'react-native'
 import {bindActionCreators} from 'redux'
-import Counter from './Counter'
-import * as counterActions from '../actions/counterActions'
+import PinScreen from './PinScreen'
+import * as pinActions from '../actions/pinScreenActions'
 import { connect } from 'react-redux'
 
 class App extends Component {
@@ -12,17 +12,15 @@ class App extends Component {
   render() {
     const { state, actions } = this.props
     return (
-      <Counter
-        counter={state}
-        {...actions} />
+      <PinScreen {... actions}/>
     )
   }
 }
 
 export default connect(state => ({
-  state: state.counter
+  // state: state.counter
 }),
   (dispatch) => ({
-    actions: bindActionCreators(counterActions, dispatch)
+    actions: bindActionCreators(pinActions, dispatch)
   })
 )(App)
