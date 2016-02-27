@@ -11,14 +11,19 @@ class App extends Component {
 
   render() {
     const { state, actions } = this.props
+    console.log(state)
     return (
-      <PinScreen {... actions}/>
+      <PinScreen
+        error={state.error}
+        isFetching={state.isFetching}
+        pin={state.pin}
+        {... actions}/>
     )
   }
 }
 
 export default connect(state => ({
-  // state: state.counter
+  state: state.pin
 }),
   dispatch => ({
     actions: bindActionCreators(pinActions, dispatch)
