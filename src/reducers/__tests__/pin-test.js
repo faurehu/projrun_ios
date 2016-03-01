@@ -4,7 +4,7 @@
 //
 // describe('When in the Pin Screen', () => {
 //   it('changes screen when correct pin is inserted', () => {
-//     console.log(pinAction.tryPin(1234))
+//     console.log(pinAction.tryPin(1235))
 //     expect(true).toBe(true)
 //   })
 //   it('shows an error message when pin is not valid', () => {
