@@ -39,6 +39,7 @@
     "eslint": "^2.2.0",
     "eslint-plugin-react": "^4.1.0",
     "react-native": "^0.18.1",
+    "react-native-fs": "^1.2.0",
     "react-redux": "^4.4.0",
     "redux": "^3.3.1",
     "redux-logger": "^2.6.0",
