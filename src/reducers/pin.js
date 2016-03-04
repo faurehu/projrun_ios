@@ -1,6 +1,7 @@
 const pinState = {
   isFetching: false,
-  isConnected: false
+  isConnected: false,
+  studentsConnected: 0
 }
 
 export default function pin(state = pinState, action) {

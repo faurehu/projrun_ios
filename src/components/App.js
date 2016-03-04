@@ -20,6 +20,7 @@ class App extends Component {
             isGuide,
             studentPin,
             isConnected,
+            studentsConnected,
             sessionUrl} = state
 
     const screens = [
@@ -30,7 +31,8 @@ class App extends Component {
         {... actions}/>,
       <WaitingScreen
         isGuide={isGuide}
-        studentPin={studentPin}/>
+        studentPin={studentPin}
+        studentsConnected={studentsConnected}/>
       // Asset screen
       // Browser screen
     ]

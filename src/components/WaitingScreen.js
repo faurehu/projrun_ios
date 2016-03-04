@@ -10,9 +10,9 @@ export default class WaitingScreen extends Component {
   }
 
   renderText = () => {
-    const { isGuide, studentPin } = this.props
+    const { isGuide, studentPin, studentsConnected } = this.props
     if(isGuide) {
-      return `Please tell your students to use the PIN: ${studentPin} 👻`
+      return `Please tell your students to use the PIN: ${studentPin}`
     } else {
       return "Waiting for your peers to connect 😎"
     }
@@ -24,6 +24,12 @@ export default class WaitingScreen extends Component {
         <Text>
           {this.renderText()}
         </Text>
+        {
+          this.props.isGuide &&
+          <Text>
+            There are {this.props.studentsConnected} students connected
+          </Text>
+        }
       </View>
     )
   }
