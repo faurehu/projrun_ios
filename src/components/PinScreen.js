@@ -12,10 +12,10 @@ export default class PinScreen extends Component {
   }
 
   onChangeTextHandler = (text) => {
-    let { tryPin } = this.props
+    let { pinAttempt } = this.props
     if(text.length === 4) {
       this._textInput.setNativeProps({text: ''})
-      tryPin(text)
+      pinAttempt(text)
     }
   }
 

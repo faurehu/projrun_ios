@@ -2,7 +2,7 @@ import React, { Component, Text } from 'react-native'
 import {bindActionCreators} from 'redux'
 import PinScreen from './PinScreen'
 import WaitingScreen from './WaitingScreen'
-import * as pinActions from '../actions/pinScreenActions'
+import * as pinAttempt from '../actions/utils/pinAttempt'
 import { connect } from 'react-redux'
 
 class App extends Component {
@@ -11,8 +11,18 @@ class App extends Component {
   }
 
   render() {
-    const { state, actions } = this.props
-    const { error, tour, isFetching, pin, isGuide, studentPin } = state
+    const { state, actions, store } = this.props
+
+    const { error,
+            tour,
+            isFetching,
+            pin,
+            isGuide,
+            studentPin,
+            isConnected,
+            studentsConnected,
+            sessionUrl} = state
+
     const screens = [
       <PinScreen
         error={error}
@@ -21,7 +31,8 @@ class App extends Component {
         {... actions}/>,
       <WaitingScreen
         isGuide={isGuide}
-        studentPin={studentPin}/>
+        studentPin={studentPin}
+        studentsConnected={studentsConnected}/>
       // Asset screen
       // Browser screen
     ]
@@ -37,6 +48,6 @@ export default connect(state => ({
   state: state.pin
 }),
   dispatch => ({
-    actions: bindActionCreators(pinActions, dispatch)
+    actions: bindActionCreators(pinAttempt, dispatch)
   })
 )(App)
