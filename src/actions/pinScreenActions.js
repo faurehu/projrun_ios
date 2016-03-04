@@ -23,6 +23,13 @@ function pinError(err) {
   }
 }
 
+function receiveImages(tour) {
+  return {
+    type: 'RECEIVE_IMG',
+    tour: tour
+  }
+}
+
 function fetchB64(assets) {
   return new Promise((resolve, reject) => {
     let b64 = []
@@ -53,7 +60,7 @@ export function tryPin(pin) {
         dispatch(receivePin(json))
         fetchB64(json.tour.assets)
         .then(x => json.tour.assets = x)
-        .then(console.log(json.tour.assets))
+        .then(dispatch(receiveImages(json.tour)))
         .catch(e => console.log(e))
         // TODO: create file for fetcher
         // dispatch(receiveImages(images))

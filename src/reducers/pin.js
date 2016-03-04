@@ -17,6 +17,10 @@ export default function pin(state = pinState, action) {
     return Object.assign({}, pinState, {
       error: action.error
     })
+  case 'RECEIVE_IMG':
+    return Object.assign({}, state, {
+      tour: action.tour
+    })
   default:
     return state
   }
