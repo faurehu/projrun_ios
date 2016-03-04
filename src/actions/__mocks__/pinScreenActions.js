@@ -19,7 +19,7 @@ function pinError(err) {
   }
 }
 
-export function tryPin(pin) {
+export function pinAttempt(pin) {
   if(pin === 1234) {
     dispatch(sendPin(pin))
   } else {
