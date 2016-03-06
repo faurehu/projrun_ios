@@ -10,7 +10,7 @@
 Clone the repo and call:
 
 ```shell
-npm install
+npm install npm3 && npm3 install
 ```
 
 Make sure the tests run by executing jest
@@ -22,4 +22,7 @@ npm test
 Start the packager and simulator by opening `ios/projrun_ios.xcodeproj/project.pbxproj`
 on XCode and running the project.
 
-You can debug by pressing `^ + cmd + z` to open the Chrome Developer tools.
+If you get an error about not being able to evaluate `navigator.userAgent.match`
+open the debugger by pressing `cmd + D`
+
+You can also debug by pressing `^ + cmd + z` to open the Chrome Developer tools.
