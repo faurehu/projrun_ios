@@ -5,6 +5,8 @@ import React, {
   TouchableHighlight
 } from 'react-native'
 
+import socket from '../actions/utils/socket'
+
 let studentView = () => (
   <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
     <View style={{alignSelf: 'stretch', alignItems: 'center', backgroundColor: 'rgb(0, 121, 197)'}}
@@ -16,7 +18,7 @@ let studentView = () => (
   </View>
 )
 
-let guideView = (pin, number) => (
+let guideView = (pin, number, emit) => (
   <View style={{flex: 1, alignItems: 'center'}}>
     <View style={{alignSelf: 'stretch', alignItems: 'center', backgroundColor: 'rgb(0, 121, 197)'}}
       borderBottomColor='5A7684' borderBottomWidth={5}>
@@ -25,7 +27,7 @@ let guideView = (pin, number) => (
       </Text>
     </View>
     <View style={{flex: 1, justifyContent: 'center'}}>
-      <TouchableHighlight style={{borderRadius: 10}}>
+      <TouchableHighlight style={{borderRadius: 10}} onPress={emit}>
         <View style={{alignItems: 'center', backgroundColor: 'F4FAFF', borderRadius: 10}}>
           <Text style={{color: '5A7684',fontSize: 30, margin: 5, marginLeft: 10, marginRight: 10}}>
             Start Tour
@@ -49,6 +51,8 @@ export default class WaitingScreen extends Component {
 
   render() {
     let { isGuide, studentsConnected, studentPin} = this.props
-    return isGuide ? guideView(studentPin, studentsConnected) : studentView()
+    console.log(global.socket)
+
+    return isGuide ? guideView(studentPin, studentsConnected, global.socket ? () => {global.socket.emit("setAsset", 1)} : () => {console.log('yo')}) : studentView()
   }
 }

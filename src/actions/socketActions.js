@@ -5,9 +5,10 @@ export function assetUpdate(index) {
   }
 }
 
-export function sessionStarted() {
+export function sessionStarted(emit) {
   return {
-    type: 'SESSION_STARTED'
+    type: 'SESSION_STARTED',
+    emit: emit
   }
 }
 

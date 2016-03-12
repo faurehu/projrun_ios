@@ -32,11 +32,11 @@ export function pinAttempt(pin) {
 
     dispatch(sendPin(pin))
 
-      return fetch(`http://1cddaa96.ngrok.com/auth/${pin}`)
-      .then(response => response.json())
-      .then(json => htmlSuccess(json))
-      .catch(err =>
-        dispatch(pinError(err))
-      )
+    return fetch(`http://localhost:3000/auth/${pin}`)
+    .then(response => response.json())
+    .then(json => htmlSuccess(json))
+    .catch(err =>
+      dispatch(pinError(err))
+    )
   }
 }

@@ -26,7 +26,9 @@ export default function pin(state = pinState, action) {
       isFetching: false
     })
   case 'UPDATE_STUDENTS_CONNECTED':
-    return state
+    return Object.assign({}, state, {
+      studentsConnected: action.number
+    })
   default:
     return state
   }
