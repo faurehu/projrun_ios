@@ -7,21 +7,26 @@ const pinState = {
 export default function pin(state = pinState, action) {
   switch (action.type) {
   case 'RECEIVE_PIN':
-    return Object.assign({}, pinState, action.json)
+    action.json.tour = JSON.parse(action.json.tour)
+    return Object.assign({}, state, action.json, { isFetching: true })
   case 'SEND_PIN':
     return Object.assign({}, state, {
       isFetching: true,
       pin: action.pin
     })
   case 'PIN_ERROR':
-    return Object.assign({}, pinState, {
-      error: action.error
-    })
-  case 'RECEIVE_IMG':
-    let tour = Object.assign({}, state.tour, {assets: action.assets, isFetching: false})
     return Object.assign({}, state, {
-      tour: tour
+      error: action.error,
+      isFetching: false
     })
+  case 'RECEIVE_ASSET':
+    let tour = Object.assign({}, state.tour, { assets: action.assets })
+    return Object.assign({}, state, {
+      tour: tour,
+      isFetching: false
+    })
+  case 'UPDATE_STUDENTS_CONNECTED':
+    return state
   default:
     return state
   }

@@ -3,8 +3,12 @@ import React, {
   View,
   TextInput,
   Text,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native'
+
+import { connect } from 'react-redux'
+import broadcast from '../actions/utils/socket'
 
 export default class PinScreen extends Component {
   constructor(props) {
@@ -34,6 +38,7 @@ export default class PinScreen extends Component {
 
   render() {
     let { onChangeTextHandler, textLogic } = this
+
     return (
       <View style={{flex: 1, backgroundColor: 'rgb(0, 121, 197)'}}>
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>

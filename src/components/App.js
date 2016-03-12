@@ -21,7 +21,7 @@ class App extends Component {
             studentPin,
             isConnected,
             studentsConnected,
-            sessionUrl} = state
+            sessionUrl } = state
 
     const screens = [
       <PinScreen
@@ -36,6 +36,7 @@ class App extends Component {
       // Asset screen
       // Browser screen
     ]
+
     if(tour === undefined) {
       return screens[0]
     } else {

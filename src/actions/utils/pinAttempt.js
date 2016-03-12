@@ -5,9 +5,9 @@ import { sendPin,
           receivePin,
           pinError } from '../pinScreenActions'
 
-function receiveImages(assets) {
+function receiveAssets(assets) {
   return {
-    type: 'RECEIVE_IMG',
+    type: 'RECEIVE_ASSET',
     assets: assets
   }
 }
@@ -15,7 +15,6 @@ function receiveImages(assets) {
 export function pinAttempt(pin) {
   return function (dispatch) {
     dispatch(sendPin(pin))
-
     function htmlSuccess(json) {
       if(json.error) {
         dispatch(pinError(json.error))
@@ -23,15 +22,17 @@ export function pinAttempt(pin) {
         dispatch(receivePin(json))
 
         fetchB64(json.tour.assets)
-        .then(assets => dispatch(receiveImages(assets)))
-        .catch(e => console.log(e))
+        .then(assets => dispatch(receiveAssets(assets)))
+        .catch(e => console.log('ANY ERROR?', e))
 
-        socket(json.sessionUrl, dispatch)
+        socket(json.socketURL, dispatch)
         // TODO Error Handler
       }
     }
 
-    return fetch(`http://localhost:3000/?pin=${pin}`, {method: 'POST'})
+    dispatch(sendPin(pin))
+
+      return fetch(`http://1cddaa96.ngrok.com/auth/${pin}`)
       .then(response => response.json())
       .then(json => htmlSuccess(json))
       .catch(err =>
